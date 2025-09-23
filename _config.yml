@@ -1,0 +1,29 @@
+# Site settings
+title: Wayne's Blog
+email: wayenj@medium.com
+description: >-
+  Welcome to Wayne's blog - sharing insights on technology, development,
+  and personal experiences. Previously published on Medium.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://wayne-xyz.github.io" # the base hostname & protocol for your site
+twitter_username: wayenj
+github_username: wayne-xyz
+medium_username: wayenj
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+theme: minima
+plugins:
+  - jekyll-feed
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - README.md
