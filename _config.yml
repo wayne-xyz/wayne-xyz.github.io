@@ -1,14 +1,13 @@
 # Site settings
 title: Wayne's Blog
-email: wayenj@medium.com
 description: >-
   Welcome to Wayne's blog - sharing insights on technology, development,
-  and personal experiences. Previously published on Medium.
+  and personal experiences.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://wayne-xyz.github.io" # the base hostname & protocol for your site
-twitter_username: wayenj
+
 github_username: wayne-xyz
-medium_username: wayenj
+personal_website: https://waynej.me
 
 # Build settings
 markdown: kramdown
