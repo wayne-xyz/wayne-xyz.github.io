@@ -1,0 +1,17 @@
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-left">
+      <a href="https://github.com/{{ site.github_username }}" target="_blank" rel="noopener">@{{ site.github_username }}</a>
+    </div>
+    <div class="footer-right">
+      {% assign socials = site.data.socials %}
+      {% if socials %}
+        {% for item in socials %}
+          <a class="social-link" href="{{ item.url }}" target="_blank" rel="noopener" aria-label="{{ item.name }}">{{ item.icon | default: item.name }}</a>
+        {% endfor %}
+      {% endif %}
+    </div>
+  </div>
+</footer>
+
+

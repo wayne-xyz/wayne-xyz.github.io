@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% include head.html %}
+    <script>
+      (function() {
+        try {
+          var saved = localStorage.getItem('sifi-theme');
+          if (saved === 'light' || saved === 'dark') {
+            document.documentElement.setAttribute('data-theme', saved);
+          }
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body>
+    {% include header.html %}
+    <main class="site-main container" role="main">{{ content }}</main>
+    {% include footer.html %}
+    <script>
+      (function() {
+        function setTheme(next) {
+          document.documentElement.setAttribute('data-theme', next);
+          try { localStorage.setItem('sifi-theme', next); } catch (e) {}
+        }
+        var btn = document.getElementById('theme-toggle');
+        if (btn) {
+          btn.addEventListener('click', function() {
+            var current = document.documentElement.getAttribute('data-theme');
+            var next = current === 'dark' ? 'light' : 'dark';
+            setTheme(next);
+            btn.setAttribute('aria-pressed', next === 'dark');
+          });
+        }
+      })();
+    </script>
+  </body>
+  </html>
+
+
