@@ -12,7 +12,7 @@
               {{ item.icon | default: item.name }}
             {% endcase %}
           </span>
-          <span class="social-name">{{ item.name }}</span>
+          <span class="social-name">{% if item.icon == 'github' and site.github_username %}{{ site.github_username }}{% else %}{{ item.name }}{% endif %}</span>
         </a>
       {% endfor %}
     {% endif %}

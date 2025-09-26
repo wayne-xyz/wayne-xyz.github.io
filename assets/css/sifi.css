@@ -4,6 +4,7 @@
   --text: #111111;
   --muted: #555555;
   --link: #0a73ff;
+  --link-article: #0b3d91;
   --border: #e6e6e6;
   --header-bg: transparent;
   --footer-bg: transparent;
@@ -14,6 +15,7 @@
   --text: #e7e9ee;
   --muted: #a0a6b0;
   --link: #6aa2ff;
+  --link-article: #5b8bd8;
   --border: #1e2026;
   --header-bg: transparent;
   --footer-bg: transparent;
@@ -95,6 +97,10 @@ body {
 .post-content p { margin: 16px 0; }
 .post-content pre, .page-content pre { background: #0b0b0b; color: #f5f5f5; padding: 12px 16px; overflow: auto; border-radius: 6px; }
 [data-theme="dark"] .post-content pre, [data-theme="dark"] .page-content pre { background: #151821; }
+
+/* Links: home post titles and post content */
+.home .post-list a, .post-content a { color: var(--link-article); text-decoration: none; }
+.home .post-list a:hover, .post-content a:hover { color: var(--text); text-decoration: underline; }
 
 /* Footer: single line, left Github handle, right arbitrary icons/links */
 .site-footer {
