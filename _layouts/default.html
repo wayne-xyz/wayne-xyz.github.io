@@ -22,14 +22,22 @@
         function setTheme(next) {
           document.documentElement.setAttribute('data-theme', next);
           try { localStorage.setItem('sifi-theme', next); } catch (e) {}
+          var btn = document.getElementById('theme-toggle');
+          if (btn) {
+            var iconLight = btn.getAttribute('data-icon-light') || '☀️';
+            var iconDark = btn.getAttribute('data-icon-dark') || '🌙';
+            btn.textContent = next === 'dark' ? iconDark : iconLight;
+            btn.setAttribute('aria-pressed', next === 'dark');
+          }
         }
         var btn = document.getElementById('theme-toggle');
+        var initial = document.documentElement.getAttribute('data-theme') || 'light';
+        setTheme(initial);
         if (btn) {
           btn.addEventListener('click', function() {
-            var current = document.documentElement.getAttribute('data-theme');
+            var current = document.documentElement.getAttribute('data-theme') || 'light';
             var next = current === 'dark' ? 'light' : 'dark';
             setTheme(next);
-            btn.setAttribute('aria-pressed', next === 'dark');
           });
         }
       })();
