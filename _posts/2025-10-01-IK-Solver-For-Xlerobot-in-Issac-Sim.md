@@ -18,6 +18,9 @@ Full video introduction(Step by step build extension and standalone code): [http
 
 
 
+<video controls preload="metadata" width="720" playsinline>
+  <source src="https://github.com/user-attachments/assets/22a7f9ee-d16c-4453-a10b-62b11c680f3c" type="video/mp4">
+</video>
 
 https://github.com/user-attachments/assets/22a7f9ee-d16c-4453-a10b-62b11c680f3c
 
@@ -87,6 +90,9 @@ Differential IK is plain IK, which requires more strategies to optimize the move
 **Optimization 1:**
 Adaptive damping avoids jitter at low lambda and latency at high values.
 
+<video controls preload="metadata" width="720" playsinline>
+  <source src="https://github.com/user-attachments/assets/40727a8c-c064-4457-b407-94286eae0a50" type="video/mp4">
+</video>
 
 https://github.com/user-attachments/assets/40727a8c-c064-4457-b407-94286eae0a50
 
@@ -165,13 +171,17 @@ I also compared with the low pass filter, which did not yield good results, so I
 **Optimization 3:**
 When we move the base, the arm's unwanted movement will affect the inertial momentum due to no sync with the target. So I applied sync strategies and the cool-down method to avoid the arm's dragging back movement.
 
-
+<video controls preload="metadata" width="720" playsinline>
+  <source src="https://github.com/user-attachments/assets/0b75e117-a36a-4905-a856-aec24e1e0a1e" type="video/mp4">
+</video>
 https://github.com/user-attachments/assets/0b75e117-a36a-4905-a856-aec24e1e0a1e
 
 ## Controller integrated
 I also integrate the game controller to control tha arms and base movement for simple demo.
 
-
+<video controls preload="metadata" width="720" playsinline>
+  <source src="https://github.com/user-attachments/assets/3419a28a-2216-4172-a5e8-6d2f9e03dbe6" type="video/mp4">
+</video>
 
 https://github.com/user-attachments/assets/3419a28a-2216-4172-a5e8-6d2f9e03dbe6
 
