@@ -184,3 +184,10 @@ https://github.com/user-attachments/assets/3419a28a-2216-4172-a5e8-6d2f9e03dbe6
 | Differential IK (2 arms)                | ~3.1 ms             |
 | Differential IK (2 arms, Adaptive Damping) | ~5-6 ms             |
 | Lula IK (2 arms)                        | ~12 ms              |
+
+
+
+
+
+
+_P.S.: More features are being added. GitHub repository coming soon!_
