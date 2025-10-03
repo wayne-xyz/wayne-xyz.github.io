@@ -38,7 +38,7 @@ Full video introduction(Step by step build extension and standalone code):
   <source src="https://github.com/user-attachments/assets/22a7f9ee-d16c-4453-a10b-62b11c680f3c" type="video/mp4">
 </video>
 
-https://github.com/user-attachments/assets/22a7f9ee-d16c-4453-a10b-62b11c680f3c
+
 
 
 - **Attention 1:**
@@ -110,7 +110,7 @@ Adaptive damping avoids jitter at low lambda and latency at high values.
   <source src="https://github.com/user-attachments/assets/40727a8c-c064-4457-b407-94286eae0a50" type="video/mp4">
 </video>
 
-https://github.com/user-attachments/assets/40727a8c-c064-4457-b407-94286eae0a50
+
 
 
 ```python
@@ -190,7 +190,7 @@ When we move the base, the arm's unwanted movement will affect the inertial mome
 <video controls preload="metadata" width="720" playsinline>
   <source src="https://github.com/user-attachments/assets/0b75e117-a36a-4905-a856-aec24e1e0a1e" type="video/mp4">
 </video>
-https://github.com/user-attachments/assets/0b75e117-a36a-4905-a856-aec24e1e0a1e
+
 
 ## Controller integrated
 I also integrate the game controller to control tha arms and base movement for simple demo.
@@ -199,7 +199,7 @@ I also integrate the game controller to control tha arms and base movement for s
   <source src="https://github.com/user-attachments/assets/3419a28a-2216-4172-a5e8-6d2f9e03dbe6" type="video/mp4">
 </video>
 
-https://github.com/user-attachments/assets/3419a28a-2216-4172-a5e8-6d2f9e03dbe6
+
 
 
 
