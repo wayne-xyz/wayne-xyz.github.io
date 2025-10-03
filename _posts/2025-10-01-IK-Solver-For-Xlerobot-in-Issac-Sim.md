@@ -9,8 +9,24 @@ tags: [robot, ik, xlerobot, isaacsim, simulation, challenging]
 ## Introduction
 Recently I was involved in a robotic hackathon, and we planned to use the Xlerobot (https://github.com/Vector-Wangel/XLeRobot) in the simulation to train some policies. This blog will introduce the IK (Inverse Kinematics) for controlling arms and discuss some challenges I faced and how to deal with them.
 
-Full video introduction(Step by step build extension and standalone code): [https://www.youtube.com/watch?v=B3NwrR5iIoA&t=159s](https://www.youtube.com/watch?v=B3NwrR5iIoA&t=159s)  
-<img src="https://img.youtube.com/vi/B3NwrR5iIoA/0.jpg" alt="YouTube video thumbnail" width="480"/>
+Full video introduction(Step by step build extension and standalone code):
+
+<!-- Responsive wrapper (optional) -->
+<style>
+.video-wrapper{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:12px}
+.video-wrapper iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0}
+</style>
+
+<div class="video-wrapper">
+  <iframe
+    src="https://www.youtube.com/embed/B3NwrR5iIoA?start=159"
+    title="YouTube video player"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    referrerpolicy="strict-origin-when-cross-origin"
+    allowfullscreen>
+  </iframe>
+</div>
+
 
 
 ## Lula IK
