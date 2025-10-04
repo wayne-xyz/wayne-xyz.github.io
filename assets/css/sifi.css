@@ -145,14 +145,19 @@ body {
   border-radius: 6px;
 }
 
+/* Expand container for post pages with TOC */
+.site-main:has(.post-container),
+.container:has(.post-container) {
+  max-width: 1400px;
+}
+
 /* Post Container with TOC */
 .post-container {
   position: relative;
   display: flex;
   gap: 40px;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 16px;
+  align-items: flex-start;
+  width: 100%;
 }
 
 .post-container .post {
@@ -171,9 +176,9 @@ body {
   position: sticky;
   top: 24px;
   width: 280px;
+  flex-shrink: 0;
   max-height: calc(100vh - 48px);
   overflow-y: auto;
-  align-self: flex-start;
   opacity: 0;
   transform: translateX(20px);
   transition: opacity 0.3s ease, transform 0.3s ease;
