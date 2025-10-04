@@ -155,16 +155,13 @@ body {
 /* Post Container with TOC */
 .post-container {
   position: relative;
-  display: flex;
-  justify-content: center;
   width: 100%;
-  padding: 0 16px;
 }
 
 .post-container .post {
-  width: 100%;
   max-width: 840px;
-  margin: 0;
+  margin: 0 auto;
+  padding: 0 16px;
 }
 
 /* Page layout (without TOC) */
@@ -174,21 +171,16 @@ body {
 
 /* Table of Contents */
 .toc-wrapper {
-  position: absolute;
-  top: 0;
+  position: fixed;
+  top: 80px;
   left: calc(50% + 840px / 2 + 40px);
   width: 280px;
+  max-height: calc(100vh - 100px);
+  overflow-y: auto;
   opacity: 0;
   transform: translateX(20px);
   transition: opacity 0.3s ease, transform 0.3s ease;
   pointer-events: none;
-}
-
-.toc-wrapper .toc {
-  position: sticky;
-  top: 24px;
-  max-height: calc(100vh - 48px);
-  overflow-y: auto;
 }
 
 .toc-wrapper.visible {
@@ -197,6 +189,7 @@ body {
   pointer-events: auto;
 }
 
+.toc-wrapper .toc,
 .toc {
   background: var(--bg);
   border: 1px solid var(--border);
@@ -347,15 +340,12 @@ code {
   .site-main:has(.post-container),
   .container:has(.post-container) {
     max-width: 840px;
-    padding: 0 20px;
-  }
-
-  .post-container {
     padding: 0;
   }
 
   .post-container .post {
     max-width: 100%;
+    padding: 0 20px;
   }
 }
 
@@ -417,6 +407,11 @@ code {
   /* Post page mobile optimizations */
   .site-main:has(.post-container),
   .container:has(.post-container) {
+    max-width: 840px;
+    padding: 0;
+  }
+
+  .post-container .post {
     padding: 0 16px;
   }
 
