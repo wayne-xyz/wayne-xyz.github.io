@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Welcome to My New Blog - A Journey from Medium to GitHub Pages"
+title: "Privous Blog at Medium"
 date: 2025-09-23 16:00:00 +0000
 categories: introduction personal
 tags: [medium, github-pages, blog, introduction]

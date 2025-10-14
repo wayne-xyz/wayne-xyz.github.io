@@ -32,7 +32,7 @@ Capital Area Council of Governments Imagery | 2022  :https://data.geographic.tex
 1st i have check several potential dataset which contains the lidar and localization data , compaerd the waymo, Pit30M ,toronto_3d. they are not match the requriement and goal and have the generalization potientility .
 
 
-### GICP Veri
+### what the GICP applied on which type of the data, since the spin and the DSM might looks different visually 
 
 - minimal verfificaiotn from one set + pertube offset to know about the effiency of the GICP 
 
@@ -40,7 +40,7 @@ Capital Area Council of Governments Imagery | 2022  :https://data.geographic.tex
 
 - self frame Coordinate
 
-
+- revisite loop clousure missing in my case , 
 
 
 ## Embeding Train and measure
@@ -69,3 +69,5 @@ reproduce
 
 
 Befroe i train the whole progress, this model train is not plain model , it will include the search windows, guassian surface and the mean+ varirance  , 
+
+
