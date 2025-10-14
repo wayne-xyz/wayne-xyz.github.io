@@ -71,3 +71,39 @@ reproduce
 Befroe i train the whole progress, this model train is not plain model , it will include the search windows, guassian surface and the mean+ varirance  , 
 
 
+### Training: learned LiDAR ↔ map localizer
+
+What I’m building
+
+A learned LiDAR ↔ map (DSM + imagery) localizer. Two tied CNN encoders (shared weights) produce 128-D embeddings for LiDAR and map patches. We cross-correlate LiDAR embeddings against shifted map embeddings over a 2D search window to estimate translation.
+
+How training works (short)
+
+- Synthetic labels via perturbation: during training we randomly shift the LiDAR embedding relative to the map embedding. The applied shift (in embedding pixels) is the ground-truth offset.
+- Cost volume: for every integer shift (dx, dy) inside the search window we compute a correlation (similarity) score and stack those into a 2D cost map (cost volume slice).
+- Prediction: pick the argmax location in the cost map (discrete grid peak) as the estimated offset.
+- Loss: compute the difference between predicted and ground-truth offsets, converting embedding pixels to meters using: meters = (embedding px) × (encoder stride) × (map resolution). Rotation search is disabled in these runs (max_rotation_deg = 0).
+
+Key assumptions and units
+
+- All perturbations, search steps and the cost volume grid are expressed in embedding pixels (the encoder's downsampled grid).
+- Reported metrics are in meters. Use the conversion above to translate between embedding pixels and meters.
+
+Observations and concerns
+
+- Quantization / no sub-pixel estimator: using a hard argmax on a discrete embedding grid quantizes predictions to integer embedding pixels. This creates a natural error floor: even with near-perfect features you typically see residual error on the order of ~0.25–0.5 embedding px, which in the author's setup often corresponds to ~0.5–1.0 m.
+- No rotation search: with max_rotation_deg = 0 we don't estimate orientation, so θ metrics will be near zero but not informative for rotation performance.
+- Loss plateau: training loss sometimes stalls around ~0.6–1.2 m. This magnitude matches the expected quantization floor plus occasional mismatches in feature alignment between modalities.
+
+Why the loss can't go below ~0.4 (yet)
+
+With a hard discrete argmax the estimator cannot recover offsets between grid cells. Even if the model produces a very sharp, correct peak, the prediction is rounded to the nearest embedding pixel. Without a local sub-pixel refinement (soft-argmax, Gaussian fit, quadratic interpolation, or a small regression head that refines the peak), there is an irreducible error floor determined by the embedding stride and map resolution.
+
+Short checklist of simple improvements to reduce the floor
+
+- Add a sub-pixel peak estimator: soft-argmax, local quadratic/Gaussian fit around the peak, or a small NN head that regresses fractional offsets from the local cost patch.
+- Increase embedding resolution (smaller stride or upsample before correlation) to reduce quantization step in meters (tradeoff: compute and memory).
+- Enable a small rotation search or predictor if heading errors are relevant.
+- Improve cross-modal feature alignment (data augmentation, contrastive losses, or additional supervision) to reduce mismatches that worsen the plateau.
+
+These changes are low-risk and can be tested incrementally to see which gives the largest practical drop in meter-level error.
