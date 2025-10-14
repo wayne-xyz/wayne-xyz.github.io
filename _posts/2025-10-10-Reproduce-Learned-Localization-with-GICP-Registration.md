@@ -75,7 +75,7 @@ Befroe i train the whole progress, this model train is not plain model , it will
 
 What I’m building
 
-A learned LiDAR ↔ map (DSM + imagery) localizer. Two tied CNN encoders (shared weights) produce 128-D embeddings for LiDAR and map patches. We cross-correlate LiDAR embeddings against shifted map embeddings over a 2D search window to estimate translation.
+A learned LiDAR ↔ map (DSM + imagery) localizer. Two tied CNN encoders (shared arch) produce 128-D embeddings for LiDAR and map patches. We cross-correlate LiDAR embeddings against shifted map embeddings over a 2D search window to estimate translation.
 
 How training works (short)
 
