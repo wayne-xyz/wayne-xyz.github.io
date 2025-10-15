@@ -107,3 +107,16 @@ Short checklist of simple improvements to reduce the floor
 - Improve cross-modal feature alignment (data augmentation, contrastive losses, or additional supervision) to reduce mismatches that worsen the plateau.
 
 These changes are low-risk and can be tested incrementally to see which gives the largest practical drop in meter-level error.
+
+
+
+Cross-corraltion caculate: channel-wise dot product(cosine similarity)
+
+```python
+lidar_feat = F.normalize(lidar_feat, p=2, dim=1)   # along channel dim C
+geo_feat   = F.normalize(geo_feat,   p=2, dim=1)
+corr = F.conv2d(geo_padded[b:b+1], kernel=online[b:b+1], padding=0)
+```
+
+compare the guassian surface vs soft-argmax , discrete to continous
+
