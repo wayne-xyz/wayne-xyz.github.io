@@ -1,12 +1,12 @@
 # Site settings
-title: Wayne's Blog
+title: Rongwei's Blog
 description: >-
-  Welcome to Wayne's blog - sharing insights on technology, development,
+  Welcome to Rongwei's blog - sharing insights on technology, development,
   and personal experiences.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://wayne-xyz.github.io" # the base hostname & protocol for your site
+url: "https://rongweiji.github.io" # the base hostname & protocol for your site
 
-github_username: wayne-xyz
+github_username: rongweiji
 personal_website: https://waynej.me
 
 # Build settings
